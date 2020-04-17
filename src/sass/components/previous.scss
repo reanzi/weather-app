@@ -1,15 +1,18 @@
 .previous-weather {
+    // display: none;
     background: var(--clr-light);
     color: var(--clr-dark);
     position: absolute;
     bottom: 0;
     width: 100%;
-    transform: translateY(60%);
+    transform: translateY(85%);
     transition: transform .3s ease-in-out;
-    padding: 3rem;
+    padding: .2rem;
+    // overflow: hidden;
 
     &__title {
         text-align: center;
+        font-size: var(--fs-h1);
     }
 }
 
@@ -18,7 +21,7 @@
     background: var(--clr-light);
     left: 50%;
     width: 10rem;
-    transform: translate(-50%, calc(-94% - 3rem));
+    transform: translate(-50%, calc(-94% - .2rem));
     text-align: center;
     font-size: var(--fs-h2);
     line-height: 1;

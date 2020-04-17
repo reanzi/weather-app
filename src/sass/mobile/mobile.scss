@@ -1,0 +1,133 @@
+@media (min-width: 600px) {
+    .mars-current-weather {
+        display: grid;
+        row-gap: 2em;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .date {
+        grid-column: 1/-1;
+    }
+
+    .temp {
+        grid-column: 1/2;
+        padding: 0;
+    }
+
+    .wind {
+        grid-column: 2/3;
+    }
+}
+
+@media (min-width: 900px) {
+
+    :root {
+        --fs-h1: 2.5rem;
+        --fs-h2: 1.5rem;
+        --fs-body: 1rem;
+        --fs-xl: 4.5rem;
+    }
+
+    body {
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .date {
+        grid-column: 1/2;
+    }
+
+    .mars-current-weather {
+        padding: 2em;
+        margin: 4em 0 0 4em;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2em;
+    }
+
+    .temp {
+        grid-column: 2 /3;
+        border-left: var(--border);
+        border-right: var(--border);
+        padding: 0 2em;
+    }
+
+    .wind {
+        grid-column: 3 /4;
+
+        .section-title,
+        .reading {
+            grid-column: 2/3;
+        }
+
+        &__direction {
+            --size: 6rem;
+            // display: grid;
+            // place-items: center;
+            grid-column: 1/2;
+            grid-row: 1 / span 2;
+        }
+
+        &__arrow {
+            --size: 1rem;
+        }
+    }
+
+    .info {
+        grid-column: 1 /3;
+    }
+
+
+    // Previous Weather Section
+    .previous-weather {
+        display: block;
+        background: var(--clr-light);
+        color: var(--clr-dark);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        transform: translateY(60%);
+        transition: transform .3s ease-in-out;
+        padding: 3rem;
+        // overflow: hidden;
+
+        &__title {
+            text-align: center;
+        }
+    }
+
+    .show-previous-weather {
+        position: absolute;
+        background: var(--clr-light);
+        left: 50%;
+        width: 10rem;
+        transform: translate(-50%, calc(-94% - 3rem));
+        text-align: center;
+        font-size: var(--fs-h2);
+        line-height: 1;
+        clip-path: polygon(50% 0, 0 100%, 100% 100%);
+        cursor: pointer;
+        color: var(--clr-gray);
+        border: none;
+        font-family: inherit;
+
+        &:hover,
+        &:focus {
+            color: var(--clr-dark);
+            // font-size: 1.6rem;
+        }
+
+        span {
+            display: block;
+            transform: rotate(0);
+            transition: transform .3s ease;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .unit {
+        position: absolute;
+        left: 2em;
+        top: 3em;
+    }
+}
