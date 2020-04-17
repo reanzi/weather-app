@@ -29,7 +29,7 @@
     }
 
     body {
-        height: 100vh;
+        min-height: 100vh;
         overflow: hidden;
     }
 
@@ -79,7 +79,7 @@
 
     // Previous Weather Section
     .previous-weather {
-        display: block;
+        // display: block;
         background: var(--clr-light);
         color: var(--clr-dark);
         position: absolute;
@@ -92,6 +92,8 @@
 
         &__title {
             text-align: center;
+            margin-top: 1rem;
+            font-size: calc(var(--fs-h1) + .2rem);
         }
     }
 
