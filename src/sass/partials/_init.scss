@@ -3,21 +3,24 @@
 *::after {
   box-sizing: border-box;
 }
+
 :root {
   --fw-light: 300;
   --fw-normal: 400;
   --fw-semi: 500;
   --fw-bold: 700;
-  --fw-h1: 2.5rem;
-  --fw-h2: 1.5rem;
-  --fw-body: 1rem;
-  --fw-xl: 4.5rem;
+  --fs-h1: 2.5rem;
+  --fs-h2: 1.5rem;
+  --fs-body: 1rem;
+  --fs-xl: 4.5rem;
   --clr-light: #ffffff;
   --clr-gray: #989898;
   --clr-dark: #444444;
   --clr-accent: #d06d6d;
   --clr-accent-dark: #613131;
+  --clr-blue-dark: #083038;
 }
+
 .sr-only:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -32,6 +35,7 @@ body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   line-height: 1.6;
+  background-color: #34afc5;
   background-image: url(https://raw.githubusercontent.com/kevin-powell/Mars-Weather-App/master/img/mars.jpg);
   background-size: cover;
   // background-image: url(./img/mars.jpg);
@@ -39,6 +43,7 @@ body {
   overflow: hidden;
   color: var(--clr-light);
 }
+
 // .mars-current-weather {
 //     background: rgba(0,0,0,.7)
 // }

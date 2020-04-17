@@ -1,0 +1,139 @@
+.previous-weather {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(60%);
+    transition: transform .3s ease-in-out;
+    padding: 3rem;
+
+    &__title {
+        text-align: center;
+    }
+}
+
+.show-previous-weather {
+    position: absolute;
+    background: var(--clr-light);
+    left: 50%;
+    width: 10rem;
+    transform: translate(-50%, calc(-94% - 3rem));
+    text-align: center;
+    font-size: var(--fs-h2);
+    line-height: 1;
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
+    cursor: pointer;
+    color: var(--clr-gray);
+    border: none;
+    font-family: inherit;
+
+    &:hover,
+    &:focus {
+        color: var(--clr-dark);
+        // font-size: 1.6rem;
+    }
+
+    span {
+        display: block;
+        transform: rotate(0);
+        transition: transform .3s ease;
+    }
+}
+
+
+.previous-days {
+    display: flex;
+    justify-content: space-between;
+}
+
+.previous-day {
+    opacity: 0;
+
+    &>* {
+        margin: 0;
+    }
+
+    // transition: opacity .35s ease-in-out;
+    &__date {
+        font-size: .9rem;
+        color: var(--clr-gray);
+    }
+
+    &__more-info {
+        cursor: pointer;
+        border: 0;
+        border-radius: 100vmax;
+        background: var(--clr-dark);
+        color: var(--clr-light);
+        text-transform: uppercase;
+        padding: .3em 1em;
+        margin-top: 1em;
+
+        &:hover {
+            background: var(--clr-gray);
+        }
+    }
+}
+
+
+
+.show-weather.previous-weather {
+    transform: translateY(0);
+
+    .show-previous-weather span {
+        transform: rotate(180deg) translateY(-6px);
+    }
+
+    .previous-weather__title,
+    .previous-day {
+        animation: slideUpIn .75s forwards;
+    }
+
+    .previous-weather__title {
+        text-align: left;
+    }
+
+    .previous-day:nth-child(1) {
+        animation-delay: 100ms;
+    }
+
+    .previous-day:nth-child(2) {
+        animation-delay: 125ms;
+    }
+
+    .previous-day:nth-child(3) {
+        animation-delay: 140ms;
+    }
+
+    .previous-day:nth-child(4) {
+        animation-delay: 180ms;
+    }
+
+    .previous-day:nth-child(5) {
+        animation-delay: 240ms;
+    }
+
+    .previous-day:nth-child(6) {
+        animation-delay: 280ms;
+    }
+
+    .previous-day:nth-child(7) {
+        animation-delay: 320ms;
+    }
+
+    // .previous-day:nth-child(8) {animation-delay: 100ms; }
+    // .previous-day:nth-child(9) {animation-delay: 100ms; }
+}
+
+@keyframes slideUpIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
