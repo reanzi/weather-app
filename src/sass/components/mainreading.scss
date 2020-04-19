@@ -12,7 +12,7 @@
 
 .section-title {
   font-size: var(--fs-h1);
-  font-weight: var(--fw-bold);
+  font-weight: var(--fw-semi);
   margin: 0;
 
   &--date {
@@ -103,8 +103,8 @@
   place-self: end;
   color: var(--clr-light);
   display: flex;
-  opacity: .7;
-  transition: opacity .3s linear;
+  opacity: 0.7;
+  transition: opacity 0.3s linear;
 
   &:hover {
     opacity: 1;
@@ -136,7 +136,7 @@
     margin: 0 1em;
 
     &::after {
-      content: '';
+      content: "";
       display: block;
       background: var(--clr-light);
       border-radius: 50%;
@@ -146,10 +146,9 @@
       width: 1rem;
     }
   }
-
 }
 
-:checked~.unit__toggle::after {
+:checked ~ .unit__toggle::after {
   margin-left: 3px;
   // margin-right: auto;
 }
