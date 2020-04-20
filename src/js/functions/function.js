@@ -1,28 +1,44 @@
 const API_KEY = "DEMO_KEY",
-  API_URL = `https://api.nasa.gov/insight_weather/?api_key=${API_KEY}&feedtype=json&ver=1.0`;
-
+  API_URL = `https://pomber.github.io/covid19/timeseries.json`;
+let contries = [];
+let corona = [];
 export const getData = () => {
   return fetch(API_URL)
     .then((res) => res.json())
     .then((data) => {
-      const { sol_keys, validity_checks, ...solData } = data;
-      //   console.log(solData);
-      return Object.entries(solData).map(([sol, data]) => {
+      const { ...corona } = data;
+      //   console.log(corona);
+      const temp = Object.entries(corona).map(([country, res]) => {
+        // console.log(res[index]);
         return {
-          sol: sol,
-          maxTemp: data.AT.mx,
-          minTemp: data.AT.mn,
-          windSpeed: data.HWS.av,
-          windDirectionDegrees: data.WD.most_common.compass_degrees,
-          windDirectionCardinal: data.WD.most_common.compass_point,
-          date: new Date(data.First_UTC),
+          country: country,
+          cases: res,
+          //   confirmed: res[index].confirmed,
+          //   deaths: res[index].deaths,
+          //   recoverd: res[index].recovered,
         };
       });
-      //   console.log(temp);
-    });
-};
+      //   console.log(typeof temp);
+      console.log(temp);
 
-export const displaySelectedSol = (sols) => {
-  const selectedSol = sols[selectedSolIndex];
-  console.log(selectedSol);
+      //   //   const { country, ...coronaData } = data;
+      //   //   console.log(data.Tanzania);
+      //   const temp = Object.entries(data).map(([country, data, index]) => {
+      //     return {
+      //       country,
+      //       data,
+      //     };
+      //   });
+
+      //   temp.forEach((result, index) => {
+      //     // const contri = value.country;
+      //     // const results = value[index];
+      //     console.log(result[index], result[index]);
+      //     // contries.push(result.country[0]);
+      //     // corona.push(result.data[0]);
+      //   });
+      //   //   console.log(temp[0]);
+      //   //   console.log(contries);
+      //   //   console.log(corona);
+    });
 };
