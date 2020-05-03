@@ -1,25 +1,42 @@
 const API_KEY = "DEMO_KEY",
   API_URL = `https://pomber.github.io/covid19/timeseries.json`;
-let contries = [];
+let country = "Tanzania";
 let corona = [];
 export const getData = () => {
   return fetch(API_URL)
     .then((res) => res.json())
     .then((data) => {
-      const { ...corona } = data;
-      //   console.log(corona);
-      const temp = Object.entries(corona).map(([country, res]) => {
-        // console.log(res[index]);
-        return {
-          country: country,
-          cases: res,
-          //   confirmed: res[index].confirmed,
-          //   deaths: res[index].deaths,
-          //   recoverd: res[index].recovered,
-        };
+      data[country].forEach(({ date, confirmed, recovered, deaths }) => {
+        console.log(
+          `
+          ${date} Active cases: ${confirmed - recovered - deaths} 
+                    Deaths: ${deaths} recovered: ${recovered} confirmed: ${confirmed}
+          `
+        );
       });
+
+      // const { ...corona } = data;
+      //   console.log(corona);
+      // const temp = Object.entries(corona).map(([country, res]) => {
+      //   // console.log(res[index]);
+      //   return {
+      //     country: country,
+      //     cases: res,
+      //     //   confirmed: res[index].confirmed,
+      //     //   deaths: res[index].deaths,
+      //     //   recoverd: res[index].recovered,
+      //   };
+      // });
+      // const outData = temp.map((country, index) => {
+      //   return {
+      //     result: {
+      //       country,
+      //       cases: country.cases,
+      //     },
+      //   };
+      // });
       //   console.log(typeof temp);
-      console.log(temp);
+      //   console.log(outData[0].result.country.cases);
 
       //   //   const { country, ...coronaData } = data;
       //   //   console.log(data.Tanzania);

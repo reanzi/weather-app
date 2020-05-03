@@ -1,0 +1,51 @@
+[
+  {
+    "abbr": "UT",
+    "name": "Utah",
+    "capital": "Salt Lake City",
+    "lat": "40.7547",
+    "long": "-111.892622"
+  },
+  {
+    "abbr": "VT",
+    "name": "Vermont",
+    "capital": "Montpelier",
+    "lat": "44.26639",
+    "long": "-72.57194"
+  },
+  {
+    "abbr": "VA",
+    "name": "Virginia",
+    "capital": "Richmond",
+    "lat": "37.54",
+    "long": "-77.46"
+  },
+  {
+    "abbr": "WA",
+    "name": "Washington",
+    "capital": "Olympia",
+    "lat": "47.042418",
+    "long": "-122.893077"
+  },
+  {
+    "abbr": "WV",
+    "name": "West Virginia",
+    "capital": "Charleston",
+    "lat": "38.349497",
+    "long": "-81.633294"
+  },
+  {
+    "abbr": "WI",
+    "name": "Wisconsin",
+    "capital": "Madison",
+    "lat": "43.074722",
+    "long": "-89.384444"
+  },
+  {
+    "abbr": "WY",
+    "name": "Wyoming",
+    "capital": "Cheyenne",
+    "lat": "41.145548",
+    "long": "-104.802042"
+  }
+]
